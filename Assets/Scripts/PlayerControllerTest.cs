@@ -26,6 +26,7 @@ public class PlayerControllerTest : MonoBehaviour
         else if (other.gameObject.CompareTag("Candy"))
         {
             Debug.Log("Candy");
+            Destroy(other.gameObject);
         }
     }
 }

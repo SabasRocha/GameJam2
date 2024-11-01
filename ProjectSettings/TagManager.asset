@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Trigger
   - Destroy
+  - Obstacles
+  - Candy
+  - Road
   layers:
   - Default
   - TransparentFX

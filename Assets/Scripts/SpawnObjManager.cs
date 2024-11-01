@@ -10,14 +10,17 @@ public class SpawnObjManager : MonoBehaviour
     public  GameObject spawnPos1;
     public GameObject  spawnPos2;
     public GameObject  spawnPos3;
-    private float startDelay = 2, repeatDelay = 1.5f, candysOffSet = 2f;
+    private float startDelay = 2, repeatDelay = 1.5f, candysOffSet = 2.1f;
     int prefabIndex1, prefabIndex2, prefabIndex3, prefabCandyIndex1, prefabChoiceIndex;
     private PlayerControllerTest playerControllertest;
+    private SpawnObjManager spawnObjManager;
 
     void Start()
     {
-        InvokeRepeating("SpawnObstacules", startDelay, repeatDelay);
         playerControllertest = GameObject.Find("Player").GetComponent<PlayerControllerTest>();
+        spawnObjManager = GameObject.Find("SpawnObjManager").GetComponent<SpawnObjManager>();
+        InvokeRepeating("SpawnObstacules", startDelay, repeatDelay);
+        
     }
 
     // Update is called once per frame
