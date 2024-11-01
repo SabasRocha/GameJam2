@@ -6,21 +6,19 @@ using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public enum Carril
-    {
-        carrilIzquierdo,
-        carrilCental,
-        carrilDerecho
-    }
-
-    public Transform posCarrilIzq;
-    public Transform posCarrilCen;
-    public Transform posCarrilDer;
+    [Header("Poscicion de Carriles")]
+    [SerializeField] private Transform posCarrilIzq;
+    [SerializeField] private Transform posCarrilCen;
+    [SerializeField] private Transform posCarrilDer;
+    [Space]
+    [Header("Variables de Salto")]
     public int carrilActual;
     public bool puedeMoverse;
     public bool tocaSuelo;
     private Rigidbody rb;
+    [Tooltip("Variable Fuerza de Salto")]
     public float jumpForce;
+    public float bajar;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,15 +32,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (puedeMoverse) 
         {
-            if (Input.GetKeyDown(KeyCode.A) && carrilActual >= 2)
+            if (Input.GetButtonDown("Izquierda") && carrilActual >= 2)
             {
                 carrilActual--;
                 ChangePosition();
                 puedeMoverse = false;
-                UnityEngine.Debug.Log("Izquierda" + carrilActual);
                 return;
             }
-            if (Input.GetKeyDown(KeyCode.D) && carrilActual < 3)
+            if (Input.GetButtonDown("Derecha") && carrilActual < 3)
             {
                 carrilActual++;
                 ChangePosition();
@@ -51,9 +48,13 @@ public class PlayerMovement : MonoBehaviour
             }
             
         }
-        if (Input.GetKeyDown(KeyCode.Space) && tocaSuelo == true)
+        if (Input.GetButtonDown("Jump") && tocaSuelo == true)
         {
             Jump();
+        }
+        if (tocaSuelo == false && Input.GetButtonDown("Bajar"))
+        {
+           GoDown();
         }
     }
 
@@ -107,5 +108,10 @@ public class PlayerMovement : MonoBehaviour
         {
             tocaSuelo = false;
         }
+    }
+    private void GoDown()
+    {
+         rb.velocity = Vector3.zero;
+         rb.AddForce(-transform.up * bajar , ForceMode.Impulse);        
     }
 }
