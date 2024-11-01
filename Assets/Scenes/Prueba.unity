@@ -678,6 +678,8 @@ GameObject:
   - component: {fileID: 1175793121}
   - component: {fileID: 1175793120}
   - component: {fileID: 1175793119}
+  - component: {fileID: 1175793124}
+  - component: {fileID: 1175793125}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -710,7 +712,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &1175793120
 CapsuleCollider:
@@ -800,6 +802,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1175793124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175793118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed89760503701004fbe6376545178e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posCarrilIzq: {fileID: 1822171034}
+  posCarrilCen: {fileID: 1752066796}
+  posCarrilDer: {fileID: 137460193}
+  carrilActual: 0
+  puedeMoverse: 0
+  tocaSuelo: 0
+  jumpForce: 12
+  bajar: 20
+--- !u!114 &1175793125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175793118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d26ba30050aee2428b7b481ba1e2260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dulcesF1: 3
+  dulcesF2: 7
+  dulcesF3: 10
+  dulcesActuales: 0
 --- !u!1 &1274772719
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,7 +946,7 @@ GameObject:
   - component: {fileID: 1518795741}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

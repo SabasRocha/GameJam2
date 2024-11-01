@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/MoveForwardObj.cs.meta
-guid: 27366e46e98bf7f46bd6160e99019793
-========
-guid: a74ce025b50b40942bb92c731942a562
->>>>>>>> Jhonatan:Assets/Scripts/Candy.cs.meta
+guid: 7d26ba30050aee2428b7b481ba1e2260
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
