@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerTranformation : MonoBehaviour
 {
     [SerializeField] private int dulcesF1, dulcesF2, dulcesF3;
-    [SerializeField] private int dulcesActuales;
+    [SerializeField] private int puntajeActual;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,18 +22,18 @@ public class PlayerTranformation : MonoBehaviour
     {
         if (other.CompareTag("Dulces"))
         {
-            dulcesActuales++;
-            if (dulcesActuales == dulcesF1) 
+            puntajeActual += other.GetComponent<Candy>().puntajeDulce;
+            if (puntajeActual == dulcesF1) 
             {
                 //Aumentar tamano
                 transform.localScale = new Vector3(2, 2, 2);
             }
-            if (dulcesActuales == dulcesF2)
+            if (puntajeActual == dulcesF2)
             {
                 //Aumentar tamano
                 transform.localScale = new Vector3(3, 3, 3);
             }
-            if (dulcesActuales == dulcesF3)
+            if (puntajeActual == dulcesF3)
             {
                 //Aumentar tamano
                 transform.localScale = new Vector3(4, 4, 4);

@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [Header("Variables de Salto")]
     public int carrilActual;
-    public bool puedeMoverse;
     public bool tocaSuelo;
     private Rigidbody rb;
     [Tooltip("Variable Fuerza de Salto")]
@@ -23,31 +22,28 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         carrilActual = 2;
-        puedeMoverse = true;
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (puedeMoverse) 
-        {
-            if (Input.GetButtonDown("Izquierda") && carrilActual >= 2)
+
+        if (Input.GetButtonDown("Izquierda") && carrilActual >= 2)
             {
                 carrilActual--;
-                ChangePosition();
-                puedeMoverse = false;
+            transform.DOKill();
+            ChangePosition();
                 return;
             }
-            if (Input.GetButtonDown("Derecha") && carrilActual < 3)
-            {
+        if (Input.GetButtonDown("Derecha") && carrilActual < 3)
+           {
                 carrilActual++;
+            transform.DOKill();
                 ChangePosition();
-                puedeMoverse = false;
                 return;
             }
             
-        }
         if (Input.GetButtonDown("Jump") && tocaSuelo == true)
         {
             Jump();
@@ -67,22 +63,13 @@ public class PlayerMovement : MonoBehaviour
         switch (carrilActual)
         {
             case 1:
-                transform.DOMoveX(posIzq.x, 0.3f).OnComplete(() =>
-                {
-                    puedeMoverse = true;
-                });
+                transform.DOMoveX(posIzq.x, 0.5f).SetEase(Ease.OutBack);
                 break;
             case 2:
-                transform.DOMoveX(posCen.x, 0.3f).OnComplete(() =>
-                {
-                    puedeMoverse = true;
-                });
+                transform.DOMoveX(posCen.x, 0.5f).SetEase(Ease.OutBack);
                 break;
             case 3:
-                transform.DOMoveX(posDer.x, 0.3f).OnComplete(() =>
-                {
-                    puedeMoverse = true;
-                });
+                transform.DOMoveX(posDer.x, 0.5f).SetEase(Ease.OutBack );
                 break;
         }
     }
