@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoadMove : MonoBehaviour
 {
 
-
+    public float speed = 30f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class RoadMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(0,0, 2) * Time.deltaTime;
+        transform.position -= new Vector3(0,0, speed) * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other) 
