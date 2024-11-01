@@ -817,6 +817,9 @@ MonoBehaviour:
   posCarrilCen: {fileID: 1752066796}
   posCarrilDer: {fileID: 137460193}
   carrilActual: 0
+  puedeMoverse: 0
+  tocaSuelo: 0
+  jumpForce: 12
 --- !u!1 &1274772719
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +928,7 @@ GameObject:
   - component: {fileID: 1518795741}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
