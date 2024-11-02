@@ -5,8 +5,9 @@ using static UnityEngine.GraphicsBuffer;
 
 public class MoveForwardObj : MonoBehaviour
 {
-    float movementZ, speed = 50f, speedIncrease = 0.1f, distanceDestroyRaod = -1791, distanceDestroyAssets = -10;
+    public static float movementZ, speed = 50f, speedIncrease = 0.09f, globalSpeed, distanceDestroyRaod = -1791, distanceDestroyAssets = -10;
     private Rigidbody candyRB;
+    public float globalSpeedPub;
 
     void Start()
     {
@@ -27,7 +28,8 @@ public class MoveForwardObj : MonoBehaviour
     {
         MoveAndRotateElements();
         DestroyElements();
-        speed += speedIncrease * Time.deltaTime;
+        speed +=speedIncrease  * Time.deltaTime;
+        globalSpeed = Mathf.Min(3, (speed * Time.deltaTime));
     }
 
     void MoveAndRotateElements()
@@ -36,15 +38,15 @@ public class MoveForwardObj : MonoBehaviour
         {
 
             candyRB.AddTorque(0, 0, 15, ForceMode.Force);
-            transform.Translate(0, (speed * Time.deltaTime), 0);
+            transform.Translate(0, (globalSpeed), 0);
         }
         else if(gameObject.CompareTag("Road"))
         {
-            transform.Translate(0, 0, -(speed * Time.deltaTime));
+            transform.Translate(0, 0, -(globalSpeed));
         }
         else 
         {
-            transform.Translate(0, -(speed * Time.deltaTime), 0);
+            transform.Translate(0, -(globalSpeed), 0);
         }
         
         
