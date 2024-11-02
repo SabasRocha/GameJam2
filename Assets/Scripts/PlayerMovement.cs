@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Variable Fuerza de Salto")]
     public float jumpForce;
     public float bajar;
+    public bool gameOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Suelo"))
+        if (collision.gameObject.CompareTag("Road"))
         {
             tocaSuelo = true;
         }
@@ -91,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Suelo"))
+        if (collision.gameObject.CompareTag("Road"))
         {
             tocaSuelo = false;
         }
@@ -100,5 +101,17 @@ public class PlayerMovement : MonoBehaviour
     {
          rb.velocity = Vector3.zero;
          rb.AddForce(-transform.up * bajar , ForceMode.Impulse);        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacles"))
+        {
+            gameOver = true;
+        }
+        else if (other.gameObject.CompareTag("Candy"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
