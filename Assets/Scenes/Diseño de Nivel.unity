@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 146402839}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.95, z: 0}
+  m_LocalPosition: {x: -6, y: 1.95, z: 0}
   m_LocalScale: {x: 1.92, y: 1.92, z: 1.92}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -638,7 +638,7 @@ Transform:
   m_GameObject: {fileID: 1645990516}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.12, y: 1.52, z: 157.12}
+  m_LocalPosition: {x: -0.12, y: 1.52, z: 450.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -676,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27366e46e98bf7f46bd6160e99019793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  globalSpeedPub: 0
 --- !u!4 &1678956614
 Transform:
   m_ObjectHideFlags: 0
@@ -860,6 +861,10 @@ PrefabInstance:
     - target: {fileID: 4935878621766873009, guid: 8cd18d2495a4bed4dab1ff31e14126a3, type: 3}
       propertyPath: m_LocalPosition.z
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768777026334133089, guid: 8cd18d2495a4bed4dab1ff31e14126a3, type: 3}
+      propertyPath: speedIncrease
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
