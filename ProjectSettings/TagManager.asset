@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Trigger
+  - Destroy
+  - Obstacle
   layers:
   - Default
   - TransparentFX
