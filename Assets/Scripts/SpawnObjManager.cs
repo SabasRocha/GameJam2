@@ -12,13 +12,13 @@ public class SpawnObjManager : MonoBehaviour
     public GameObject  spawnPos3;
     private float startDelay = 1, repeatDelay = 3.5f, delayDecreaseRate = 0.05f, candysOffSet = 2.1f;
     int speed, prefabIndex1, prefabIndex2, prefabIndex3, prefabCandyIndex1, prefabChoiceIndex;
-    private PlayerMovement playerControllertest;
+    private PlayerControllerTest playerControllertest;
     private MoveForwardObj moveForwardObj;
     bool centinela = false;
 
     void Start()
     {
-        playerControllertest = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        playerControllertest = GameObject.Find("Player").GetComponent<PlayerControllerTest>();
         moveForwardObj = GameObject.FindWithTag("Road").GetComponent<MoveForwardObj>();
         //InvokeRepeating("SpawnObstacules", startDelay, repeatDelay);
         StartCoroutine(SpawnObstacules());
