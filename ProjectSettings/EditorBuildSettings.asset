@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2f3ec96f1e6cc424cb0d2c8754dccab0
   - enabled: 1
-    path: Assets/Scenes/Pause.unity
-    guid: efac8f679b1fee04fa4e5d337c03a75c
+    path: "Assets/Scenes/Dise\xF1o de Nivel_2.unity"
+    guid: 92bf3c3141f95c541922d0c96f93997c
   m_configObjects: {}
