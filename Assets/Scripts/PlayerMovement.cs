@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float bajar;
     public bool gameOver;
+    public GameObject panelGameOver;
+    public GameObject panelPause;
     // Start is called before the first frame update
     void Start()
     {
@@ -108,6 +110,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacles"))
         {
             gameOver = true;
+            panelGameOver.SetActive(true);
+            panelPause.SetActive(false);
         }
         else if (other.gameObject.CompareTag("Candy"))
         {
