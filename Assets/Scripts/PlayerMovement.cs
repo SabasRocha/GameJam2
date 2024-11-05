@@ -113,5 +113,5 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-    }
+    }//movimiento de Jhonatan
 }
