@@ -4,17 +4,30 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-   
-    // Start is called before the first frame update
+    public bool gameOver;
     void Start()
     {
-        
+        gameOver = false;
     }
 
-    
+    // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacles"))
+        {
+            gameOver = true;
+        }
+        else if (other.gameObject.CompareTag("Candy"))
+        {
+            Debug.Log("Candy");
+            Destroy(other.gameObject);
+        }
+    }
+
 }

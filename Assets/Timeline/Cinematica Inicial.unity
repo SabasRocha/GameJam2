@@ -11246,7 +11246,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b481929101337d74f8680e56f9300174, type: 3}
+    m_Font: {fileID: 12800000, guid: e9d041e783390c442b3efade48415f79, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -11368,7 +11368,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b481929101337d74f8680e56f9300174, type: 3}
+    m_Font: {fileID: 12800000, guid: e9d041e783390c442b3efade48415f79, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -15048,7 +15048,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b481929101337d74f8680e56f9300174, type: 3}
+    m_Font: {fileID: 12800000, guid: e9d041e783390c442b3efade48415f79, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -26111,11 +26111,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 581964095931843506, guid: 8cd18d2495a4bed4dab1ff31e14126a3, type: 3}
   m_PrefabInstance: {fileID: 225706609}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1593260490 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 533210649708999159, guid: 8cd18d2495a4bed4dab1ff31e14126a3, type: 3}
-  m_PrefabInstance: {fileID: 164678652}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1593579575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
@@ -28487,13 +28482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed89760503701004fbe6376545178e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posCarrilIzq: {fileID: 500983634}
-  posCarrilCen: {fileID: 1593260490}
-  posCarrilDer: {fileID: 607242094}
-  carrilActual: 0
-  tocaSuelo: 0
-  jumpForce: 0
-  bajar: 0
   gameOver: 0
 --- !u!114 &1713397386
 MonoBehaviour:
@@ -33188,7 +33176,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b481929101337d74f8680e56f9300174, type: 3}
+    m_Font: {fileID: 12800000, guid: e9d041e783390c442b3efade48415f79, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -33302,6 +33290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2033374645}
   - component: {fileID: 2033374644}
+  - component: {fileID: 2033374646}
   m_Layer: 0
   m_Name: Director 2
   m_TagString: Untagged
@@ -33320,7 +33309,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 3a81dcaafd0892247a03a414fe180c09, type: 2}
   m_InitialState: 1
-  m_WrapMode: 0
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -33352,6 +33341,8 @@ PlayableDirector:
     value: {fileID: 637685349}
   - key: {fileID: -4565464488487539084, guid: 3a81dcaafd0892247a03a414fe180c09, type: 2}
     value: {fileID: 874001112}
+  - key: {fileID: -8600702824247200618, guid: 3a81dcaafd0892247a03a414fe180c09, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &2033374645
@@ -33369,6 +33360,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2033374646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033374643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c41e9c5603da04c9b4f15c9bff2d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 2033374644}
 --- !u!1001 &2041207954
 PrefabInstance:
   m_ObjectHideFlags: 0
