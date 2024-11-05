@@ -3296,6 +3296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4437671895398724481, guid: 8cd18d2495a4bed4dab1ff31e14126a3, type: 3}
+    - {fileID: 8768777026334133089, guid: 8cd18d2495a4bed4dab1ff31e14126a3, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5305373773211131610, guid: 8cd18d2495a4bed4dab1ff31e14126a3, type: 3}
     - {fileID: 160410048360651549, guid: 8cd18d2495a4bed4dab1ff31e14126a3, type: 3}
@@ -11257,9 +11258,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.3
-  m_Text: 'ES NOCHE DE HALLOWEEN
-
-    Y UN OSCURO PELIGRO ACECHA'
+  m_Text: IT'S HALLOWEEN AND DARK DANGER LURKS IN TO THE NIGHT
 --- !u!222 &636844631
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11381,7 +11380,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.3
-  m_Text: MIENTRAS ESCPAS  DEL PELIGRO
+  m_Text: BEFORE THE PUMPKIN CATCHES YOU.
 --- !u!222 &637685351
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15061,7 +15060,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.3
-  m_Text: "\xBFESTAS LISTO?"
+  m_Text: ARE YOU READY?
 --- !u!222 &874001114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28495,6 +28494,7 @@ MonoBehaviour:
   tocaSuelo: 0
   jumpForce: 0
   bajar: 0
+  gameOver: 0
 --- !u!114 &1713397386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33200,7 +33200,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.3
-  m_Text: "RECOGE DUCLES \nY EVITA OBSTACULOS TANTO COMO PUEADAS"
+  m_Text: COLLECT CANDY AND AVOID OBSTACLES AS MUCH AS YOU CAN
 --- !u!222 &2023892909
 CanvasRenderer:
   m_ObjectHideFlags: 0
