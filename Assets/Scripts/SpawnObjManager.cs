@@ -12,16 +12,15 @@ public class SpawnObjManager : MonoBehaviour
     public GameObject  spawnPos3;
     private float startDelay = 1, repeatDelay = 3.5f, delayDecreaseRate = 0.05f, candysOffSet = 2.1f;
     int speed, prefabIndex1, prefabIndex2, prefabIndex3, prefabCandyIndex1, prefabChoiceIndex;
-    private PlayerControllerTest playerControllertest;
+    private PlayerMovement playerMovement;
     private MoveForwardObj moveForwardObj;
     bool centinela = false;
     
 
     void Start()
     {
-        playerControllertest = GameObject.Find("Player").GetComponent<PlayerControllerTest>();
+        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
         moveForwardObj = GameObject.FindWithTag("Road").GetComponent<MoveForwardObj>();
-        //InvokeRepeating("SpawnObstacules", startDelay, repeatDelay);
         StartCoroutine(SpawnObstacules());
 
     }
@@ -53,7 +52,7 @@ public class SpawnObjManager : MonoBehaviour
         while (true)
         {
             repeatDelay = Mathf.Max(0.4f, repeatDelay - delayDecreaseRate);
-            if (playerControllertest.gameOver != true)
+            if (playerMovement.gameOver != true)
             {
                 prefabChoiceIndex = Random.Range(0, 8);
 

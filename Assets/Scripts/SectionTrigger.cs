@@ -9,6 +9,7 @@ public class SectionTrigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) 
     {
+    
         if (other.gameObject.CompareTag("Trigger"))
         {
             Instantiate(road, new Vector3(0, 0, 1783f), Quaternion.identity);
