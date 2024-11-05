@@ -10,7 +10,7 @@ public class SpawnObjManager : MonoBehaviour
     public  GameObject spawnPos1;
     public GameObject  spawnPos2;
     public GameObject  spawnPos3;
-    private float startDelay = 1, repeatDelay = 2, delayDecreaseRate = 0.05f, candysOffSet = 2.1f;
+    private float startDelay = 1, repeatDelay = 3.5f, delayDecreaseRate = 0.05f, candysOffSet = 2.1f;
     int speed, prefabIndex1, prefabIndex2, prefabIndex3, prefabCandyIndex1, prefabChoiceIndex;
     private PlayerControllerTest playerControllertest;
     private MoveForwardObj moveForwardObj;
@@ -45,7 +45,7 @@ public class SpawnObjManager : MonoBehaviour
         yield return new WaitForSeconds(startDelay);
         while (true)
         {
-            repeatDelay = Mathf.Max(0.5f, repeatDelay - delayDecreaseRate);
+            repeatDelay = Mathf.Max(0.4f, repeatDelay - delayDecreaseRate);
             if (playerControllertest.gameOver != true)
             {
                 prefabChoiceIndex = Random.Range(0, 8);
@@ -57,40 +57,40 @@ public class SpawnObjManager : MonoBehaviour
                 switch (prefabChoiceIndex)
                 {
                     case 0:
-                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(candysPrefabs[prefabCandyIndex1], new Vector3(spawnPos3.transform.position.x, spawnPos3.transform.position.y + candysOffSet, spawnPos3.transform.position.z), Quaternion.Euler(-90, 0, 0));
+                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.identity);
+                        Instantiate(candysPrefabs[prefabCandyIndex1], new Vector3(spawnPos3.transform.position.x, spawnPos3.transform.position.y + candysOffSet, spawnPos3.transform.position.z), Quaternion.identity);
                         break;
                     case 1:
-                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex3], spawnPos3.transform.position, Quaternion.Euler(-90, 0, -180));
+                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex3], spawnPos3.transform.position, Quaternion.identity);
                         break;
                     case 2:
-                        Instantiate(candysPrefabs[prefabCandyIndex1], new Vector3(spawnPos1.transform.position.x, spawnPos1.transform.position.y + candysOffSet, spawnPos1.transform.position.z), Quaternion.Euler(-90, 0, 0));
-                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos2.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos3.transform.position, Quaternion.Euler(-90, 0, -180));
+                        Instantiate(candysPrefabs[prefabCandyIndex1], new Vector3(spawnPos1.transform.position.x, spawnPos1.transform.position.y + candysOffSet, spawnPos1.transform.position.z), Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos2.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos3.transform.position, Quaternion.identity);
                         break;
                     case 3:
-                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex3], spawnPos3.transform.position, Quaternion.Euler(-90, 0, -180));
+                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex3], spawnPos3.transform.position, Quaternion.identity);
                         break;
                     case 5:
 
-                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(candysPrefabs[prefabCandyIndex1], new Vector3(spawnPos2.transform.position.x, spawnPos2.transform.position.y + candysOffSet, spawnPos2.transform.position.z), Quaternion.Euler(-90, 0, 0));
-                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos3.transform.position, Quaternion.Euler(-90, 0, -180));
+                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.identity);
+                        Instantiate(candysPrefabs[prefabCandyIndex1], new Vector3(spawnPos2.transform.position.x, spawnPos2.transform.position.y + candysOffSet, spawnPos2.transform.position.z), Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos3.transform.position, Quaternion.identity);
                         break;
                     case 6:
-                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex3], spawnPos3.transform.position, Quaternion.Euler(-90, 0, -180));
+                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex3], spawnPos3.transform.position, Quaternion.identity);
                         break;
                     case 7:
-                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.Euler(-90, 0, -180));
-                        Instantiate(obstaclePrefabs[prefabIndex3], spawnPos3.transform.position, Quaternion.Euler(-90, 0, -180));
+                        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2.transform.position, Quaternion.identity);
+                        Instantiate(obstaclePrefabs[prefabIndex3], spawnPos3.transform.position, Quaternion.identity);
                         break;
                     default:
                         break;
