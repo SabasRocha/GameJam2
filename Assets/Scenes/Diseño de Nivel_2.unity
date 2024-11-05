@@ -312,9 +312,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 161013259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed89760503701004fbe6376545178e18, type: 3}
+  m_Script: {fileID: 11500000, guid: ae2260ced47c3604b9b865e6bf5c23f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posCarrilIzq: {fileID: 623778004}
+  posCarrilCen: {fileID: 199466060}
+  posCarrilDer: {fileID: 1569392894}
+  carrilActual: 0
+  tocaSuelo: 0
+  jumpForce: 25
+  bajar: 30
   gameOver: 0
 --- !u!1 &199466059
 GameObject:

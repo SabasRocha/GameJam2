@@ -1086,10 +1086,10 @@ GameObject:
   - component: {fileID: 1958437420}
   - component: {fileID: 1958437419}
   - component: {fileID: 1958437418}
-  - component: {fileID: 1958437417}
   - component: {fileID: 1958437416}
   - component: {fileID: 1958437423}
   - component: {fileID: 1958437424}
+  - component: {fileID: 1958437425}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1113,26 +1113,6 @@ MonoBehaviour:
   dulcesF2: 10
   dulcesF3: 5
   puntajeActual: 0
---- !u!114 &1958437417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958437415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed89760503701004fbe6376545178e18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posCarrilIzq: {fileID: 875430430}
-  posCarrilCen: {fileID: 1752826400}
-  posCarrilDer: {fileID: 506262500}
-  carrilActual: 0
-  tocaSuelo: 0
-  jumpForce: 25
-  bajar: 30
-  gameOver: 0
 --- !u!54 &1958437418
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1273,6 +1253,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cc71fa9272bc9409f9f57c37a3ef02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: 0
+--- !u!114 &1958437425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958437415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2260ced47c3604b9b865e6bf5c23f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posCarrilIzq: {fileID: 875430430}
+  posCarrilCen: {fileID: 1752826400}
+  posCarrilDer: {fileID: 506262500}
+  carrilActual: 0
+  tocaSuelo: 0
+  jumpForce: 0
+  bajar: 0
   gameOver: 0
 --- !u!1 &1979471415
 GameObject:
