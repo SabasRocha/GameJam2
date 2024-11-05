@@ -20,7 +20,7 @@ public class PlayerTranformation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Dulces"))
+        if (other.CompareTag("Candy"))
         {
             puntajeActual += other.GetComponent<Candy>().puntajeDulce;
             if (puntajeActual == dulcesF1) 
