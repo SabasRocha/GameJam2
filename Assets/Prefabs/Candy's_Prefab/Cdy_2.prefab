@@ -143,6 +143,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8702386900416713988}
   - component: {fileID: 1083955027855863544}
+  - component: {fileID: -5463461994718609190}
+  - component: {fileID: -7305465045039094031}
   m_Layer: 0
   m_Name: Cdy_2
   m_TagString: Candy
@@ -179,3 +181,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalSpeedPub: 0
+--- !u!114 &-5463461994718609190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675389668931715785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e2191c2828b5045a87db220d8c196f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntajeDulce: 2
+--- !u!135 &-7305465045039094031
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675389668931715785}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

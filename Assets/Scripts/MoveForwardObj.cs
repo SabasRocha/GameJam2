@@ -71,7 +71,7 @@ public class MoveForwardObj : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
         
     }

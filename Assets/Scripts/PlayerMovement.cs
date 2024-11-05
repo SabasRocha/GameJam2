@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float bajar;
     public bool gameOver;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && tocaSuelo == true)
         {
             Jump();
+            animator.SetBool("TocaSuelo", false);
         }
         if (tocaSuelo == false && Input.GetButtonDown("Bajar"))
         {
@@ -87,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Road"))
         {
             tocaSuelo = true;
+            animator.SetBool("TocaSuelo", tocaSuelo);
         }
     }
 
@@ -95,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Road"))
         {
             tocaSuelo = false;
+            animator.SetBool("TocaSuelo", tocaSuelo);
         }
     }
     private void GoDown()
@@ -105,13 +110,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Obstacles"))
+            if (other.gameObject.CompareTag("Obstacles"))
+            {
+                gameOver = true;
+            }
+            else if (other.gameObject.CompareTag("Candy"))
+            {
+                Destroy(other.gameObject);
+            }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Road"))
         {
-            gameOver = true;
+            tocaSuelo = true;
+            animator.SetBool("TocaSuelo", tocaSuelo);
         }
-        else if (other.gameObject.CompareTag("Candy"))
-        {
-            Destroy(other.gameObject);
-        }
-    }//movimiento de Jhonatan
+    }
 }
