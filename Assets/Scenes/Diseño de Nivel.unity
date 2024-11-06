@@ -783,16 +783,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefabs:
-  - {fileID: 6951246380211963486, guid: 5f58c6b27c491204f89dee7c2c115c31, type: 3}
-  - {fileID: 1678956612}
-  - {fileID: 423497948454944432, guid: f7bdf73d5bfa85c4a937484d5ae3f350, type: 3}
-  - {fileID: 1678956612}
-  - {fileID: 3967966143183846086, guid: c7fc31679b6baf249aa5eb21ed5ea489, type: 3}
-  - {fileID: 1678956612}
+  - {fileID: 5268724745589427249, guid: d9fa0f076c123754abf2cd7d5da4affd, type: 3}
+  - {fileID: 7645142001755902038, guid: 815c2538ec8f0b64b9e0f908a11102f9, type: 3}
+  - {fileID: 2260418175620307652, guid: 36e98c1c83d2bfe45a24707fc04231a8, type: 3}
+  - {fileID: 7645142001755902038, guid: 815c2538ec8f0b64b9e0f908a11102f9, type: 3}
+  - {fileID: 1383115594646509514, guid: 602355424617f1d4d8bad141240435b8, type: 3}
+  - {fileID: 7645142001755902038, guid: 815c2538ec8f0b64b9e0f908a11102f9, type: 3}
   candysPrefabs:
-  - {fileID: 9166393077913513860, guid: 6f8eb6c346fd2fc4490cbc78a316657b, type: 3}
-  - {fileID: 7793626116249387384, guid: 1dd0ff62a12494f4daced83f1ca4a495, type: 3}
-  - {fileID: 6114618381321732450, guid: ad325e4de955f7b459c510b72bfc135d, type: 3}
+  - {fileID: 7089441316681673041, guid: 9e0abd06901326f43b2f76194ae02dd9, type: 3}
+  - {fileID: 533190051041790520, guid: 9500324b77d3532459e2280fc026add6, type: 3}
+  - {fileID: 1146465509115613173, guid: c253a3748e12ff9408d89aa352a21c76, type: 3}
   spawnPos1: {fileID: 1552260304}
   spawnPos2: {fileID: 774353320}
   spawnPos3: {fileID: 1979471415}
@@ -1086,9 +1086,10 @@ GameObject:
   - component: {fileID: 1958437420}
   - component: {fileID: 1958437419}
   - component: {fileID: 1958437418}
-  - component: {fileID: 1958437417}
   - component: {fileID: 1958437416}
   - component: {fileID: 1958437423}
+  - component: {fileID: 1958437424}
+  - component: {fileID: 1958437425}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1108,30 +1109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d26ba30050aee2428b7b481ba1e2260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dulcesF1: 3
-  dulcesF2: 7
-  dulcesF3: 10
+  dulcesF1: 4
+  dulcesF2: 10
+  dulcesF3: 5
   puntajeActual: 0
---- !u!114 &1958437417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958437415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed89760503701004fbe6376545178e18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posCarrilIzq: {fileID: 875430430}
-  posCarrilCen: {fileID: 1752826400}
-  posCarrilDer: {fileID: 506262500}
-  carrilActual: 0
-  tocaSuelo: 0
-  jumpForce: 25
-  bajar: 30
-  gameOver: 0
 --- !u!54 &1958437418
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1260,6 +1241,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   road: {fileID: 159511700757698744, guid: 8cd18d2495a4bed4dab1ff31e14126a3, type: 3}
+--- !u!114 &1958437424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958437415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cc71fa9272bc9409f9f57c37a3ef02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: 0
+--- !u!114 &1958437425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958437415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2260ced47c3604b9b865e6bf5c23f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posCarrilIzq: {fileID: 875430430}
+  posCarrilCen: {fileID: 1752826400}
+  posCarrilDer: {fileID: 506262500}
+  carrilActual: 0
+  tocaSuelo: 0
+  jumpForce: 0
+  bajar: 0
+  gameOver: 0
 --- !u!1 &1979471415
 GameObject:
   m_ObjectHideFlags: 0
