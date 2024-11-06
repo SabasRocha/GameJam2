@@ -13,7 +13,7 @@ public class SpawnObjManager : MonoBehaviour
     public GameObject spawnPos1_1;
     public GameObject spawnPos2_2;
     public GameObject spawnPos3_3;
-    private float startDelay = 1, repeatDelay = 3.5f, delayDecreaseRate = 0.12f, candysOffSet = 2.1f;
+    private float startDelay = 1, repeatDelay = 4f, delayDecreaseRate = 0.12f, candysOffSet = 2.1f;
     int speed, prefabIndex1, prefabIndex2, prefabIndex3, prefabCandyIndex1, prefabChoiceIndex;
     private PlayerMovement playerMovement;
     private MoveForwardObj moveForwardObj;
@@ -42,6 +42,7 @@ public class SpawnObjManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(repeatDelay);
         if (GameObject.FindWithTag("Road").GetComponent<MoveForwardObj>() != null) 
         {
            moveForwardObj = GameObject.FindWithTag("Road").GetComponent<MoveForwardObj>();
@@ -65,7 +66,7 @@ public class SpawnObjManager : MonoBehaviour
         yield return new WaitForSeconds(startDelay);
         while (true)
         {
-            repeatDelay = Mathf.Max(0.4f, repeatDelay - delayDecreaseRate);
+            repeatDelay = Mathf.Max(0.65f, repeatDelay - delayDecreaseRate);
             if (playerMovement.gameOver != true)
             {
                 prefabChoiceIndex = Random.Range(0, 8);
