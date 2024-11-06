@@ -6,6 +6,7 @@ public class Candy : MonoBehaviour
 {
     public int puntajeDulce;
     private GameUIManager gameUIManager;
+    public ParticleSystem explosionParticle;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class Candy : MonoBehaviour
         if (other != null && other.CompareTag("Player"))
         {
             AddPointsScore();
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
         }
         
     }
