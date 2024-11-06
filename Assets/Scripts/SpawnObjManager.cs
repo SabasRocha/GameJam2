@@ -13,7 +13,7 @@ public class SpawnObjManager : MonoBehaviour
     public GameObject spawnPos1_1;
     public GameObject spawnPos2_2;
     public GameObject spawnPos3_3;
-    private float startDelay = 1, repeatDelay = 3.5f, delayDecreaseRate = 0.2f, candysOffSet = 2.1f;
+    private float startDelay = 1, repeatDelay = 3.5f, delayDecreaseRate = 0.12f, candysOffSet = 2.1f;
     int speed, prefabIndex1, prefabIndex2, prefabIndex3, prefabCandyIndex1, prefabChoiceIndex;
     private PlayerMovement playerMovement;
     private MoveForwardObj moveForwardObj;
