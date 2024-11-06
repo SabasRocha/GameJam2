@@ -29,10 +29,15 @@ public class SpawnObjManager : MonoBehaviour
         Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2_2.transform.position, Quaternion.identity);
         Instantiate(candysPrefabs[prefabCandyIndex1], new Vector3(spawnPos3_3.transform.position.x, spawnPos3_3.transform.position.y + candysOffSet, spawnPos3_3.transform.position.z), Quaternion.identity);
 
-        playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
         moveForwardObj = GameObject.FindWithTag("Road").GetComponent<MoveForwardObj>();
         StartCoroutine(SpawnObstacules());
 
+    }
+
+    public void SetPlayer()
+    {
+        playerMovement = GameObject.FindAnyObjectByType<PlayerMovement>();
     }
 
     // Update is called once per frame

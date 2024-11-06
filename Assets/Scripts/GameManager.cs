@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public float spawnInterval = 2f; // Intervalo de generación
     public float spawnRangeX = 3.0f; // Rango en X para la aparición
     public GameObject nino, adolescente, adulto, fantasma;
+    public ParticleSystem explosionParticle;
 
     private void Awake()
     {
@@ -21,6 +22,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
       //  InvokeRepeating("SpawnDulce", 0, spawnInterval);
+    }
+
+    void Update()
+    {
+  
     }
 
     private void SpawnDulce()
@@ -41,12 +47,21 @@ public class GameManager : MonoBehaviour
         switch (Personaje)
         {
             case "adolecente":
+                adolescente.transform.position = personajeActual.transform.position;
+                Instantiate(explosionParticle, personajeActual.transform.position, explosionParticle.transform.rotation);
                 adolescente.SetActive(true);
+                adolescente.GetComponent<PlayerMovement>().ActCarril(nino.GetComponent<PlayerMovement>().carrilActual);
                 break;
             case "adulto":
+                adulto.transform.position = personajeActual.transform.position;
+                Instantiate(explosionParticle, personajeActual.transform.position, explosionParticle.transform.rotation);
+                adulto.GetComponent<PlayerMovement>().ActCarril(adolescente.GetComponent<PlayerMovement>().carrilActual);
                 adulto.SetActive(true);
                 break;
             case "muerto":
+                fantasma.transform.position = personajeActual.transform.position;
+                Instantiate(explosionParticle, personajeActual.transform.position, explosionParticle.transform.rotation);
+                fantasma.GetComponent<PlayerMovement>().ActCarril(adulto.GetComponent<PlayerMovement>().carrilActual);
                 fantasma.SetActive(true);   
                 break;
         }
