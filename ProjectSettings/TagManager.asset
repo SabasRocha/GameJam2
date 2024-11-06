@@ -7,6 +7,10 @@ TagManager:
   - Trigger
   - Destroy
   - Obstacle
+  - Road
+  - Candy
+  - Obstacles
+  - Canvas
   layers:
   - Default
   - TransparentFX

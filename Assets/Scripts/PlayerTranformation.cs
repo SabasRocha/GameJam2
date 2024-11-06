@@ -21,9 +21,9 @@ public class PlayerTranformation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Candy"))
+        if (other.CompareTag("Candy") && other != null)
         {
-            puntajeActual += other.GetComponent<Candy>().puntajeDulce;
+            //puntajeActual += other.GetComponent<Candy>().puntajeDulce;
             if (puntajeActual == dulcesF1) 
             {
                 GameObject.FindAnyObjectByType<GameManager>().CambiarPersonaje();
