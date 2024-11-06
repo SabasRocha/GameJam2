@@ -21,7 +21,7 @@ public class GameUIManager : MonoBehaviour
 
     void Start()
     {
-        SetPhaseValues(1); // Inicializa la fase 1 (adolescente)
+        SetPhaseValues(0); // Inicializa la fase 1 (adolescente)
         distanceProgressBar.value = 0;
         messageText.gameObject.SetActive(false); // Oculta el mensaje al inicio
     }
@@ -33,16 +33,8 @@ public class GameUIManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (globalScoreTiempo < phaseMaxTime)
-        {
-            distanceProgressBar.value = globalScoreTiempo; // La barra refleja el progreso del tiempo en cada fase
-        }
-
-        if (globalScoreTiempo >= phaseMaxTime)
-        {
-            OnPhaseReached();
-        }
         GlobalScore();
+        valueSlider();
     }
 
     public void GlobalScore()
@@ -52,6 +44,18 @@ public class GameUIManager : MonoBehaviour
         globalScore = globalScoreTiempo + candyValueGlobal; 
         globalScoreText.text = "Score: " + Mathf.CeilToInt(globalScore).ToString();
 
+    }
+
+    void valueSlider()
+    {
+        if (candyValueGlobal < phaseMaxTime)
+        {
+            distanceProgressBar.value = candyValueGlobal; // La barra refleja el progreso del tiempo en cada fase
+        }
+        if (candyValueGlobal >= phaseMaxTime)
+        {
+            OnPhaseReached();
+        }
     }
 
     void OnPhaseReached()
@@ -75,6 +79,9 @@ public class GameUIManager : MonoBehaviour
         // Selecciona el mensaje adecuado según la fase
         switch (phase)
         {
+            case 0:
+                messageText.text = "Next transformation:";
+                break;
             case 1:
                 messageText.text = "Very good, you managed to grow up, you are a teenager";
                 break;
@@ -104,16 +111,16 @@ public class GameUIManager : MonoBehaviour
         switch (currentPhase)
         {
             case 1:
-                phaseMaxTime = 10;
+                phaseMaxTime = 100;
                 phaseMinValue = 0;
                 break;
             case 2:
-                phaseMaxTime = 20;
-                phaseMinValue = 11;
+                phaseMaxTime = 300;
+                phaseMinValue = 101;
                 break;
             case 3:
-                phaseMaxTime = 30;
-                phaseMinValue = 21;
+                phaseMaxTime = 500;
+                phaseMinValue = 301;
                 break;
         }
         distanceProgressBar.minValue = phaseMinValue;
@@ -126,5 +133,6 @@ public class GameUIManager : MonoBehaviour
         
         candyValueGlobal += candyValue;
         GlobalScore();
+
     }
 }
