@@ -109,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacles"))
         {
+            Time.timeScale = 0f;
             gameOver = true;
             panelGameOver.SetActive(true);
             panelPause.SetActive(false);
