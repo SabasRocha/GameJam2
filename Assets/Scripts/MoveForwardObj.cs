@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class MoveForwardObj : MonoBehaviour
 {
-    public static float movementZ, speed = 15f, speedIncrease = 0.05f, globalSpeed, distanceDestroyRaod = -1791, distanceDestroyAssets = -10;
+    public static float movementZ, speed = 80f, speedIncrease = 0.05f, globalSpeed, distanceDestroyRaod = -1791, distanceDestroyAssets = -10;
     private bool Destruido = false;
     private Rigidbody candyRB;
     Transform childGameObject;

@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance; 
     public GameObject dulcePrefab; // Asigna tu prefab de dulce aquí
     public float spawnInterval = 2f; // Intervalo de generación
     public float spawnRangeX = 3.0f; // Rango en X para la aparición
-    public GameObject adolescente, adulto, anciano, fantasma; 
+    public GameObject adolescente, adulto, anciano, fantasma;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;   
+        }
+    }
     private void Start()
     {
       //  InvokeRepeating("SpawnDulce", 0, spawnInterval);
@@ -25,8 +33,13 @@ public class GameManager : MonoBehaviour
     public void CambiarPersonaje()
     {
         GameObject personajeActual = GameObject.FindAnyObjectByType<PlayerMovement>().gameObject;
+        PlayerMovement playerMovement = GameObject.FindAnyObjectByType<PlayerMovement>();
         Vector3 position = personajeActual.transform.position;
         personajeActual.SetActive(false);
-        Instantiate(adolescente, position, Quaternion.identity);
+        GameObject personajeCreado = Instantiate(adolescente, position, Quaternion.identity);
+        personajeCreado.GetComponent<PlayerMovement>().posCarrilIzq = playerMovement.posCarrilIzq; 
+        personajeCreado.GetComponent<PlayerMovement>().posCarrilCen = playerMovement.posCarrilCen; 
+        personajeCreado.GetComponent<PlayerMovement>().posCarrilDer = playerMovement.posCarrilDer; 
+
     }
 }
