@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 public class MoveForwardObj : MonoBehaviour
 {
-    public static float movementZ, speed = 15f, speedIncrease = 0.05f, globalSpeed, distanceDestroyRaod = -1791, distanceDestroyAssets = -10;
+    public static float movementZ, speed = 50f, speedIncrease = 0.05f, globalSpeed = 0f, distanceDestroyRaod = -1791, distanceDestroyAssets = -10;
     private bool Destruido = false;
     private Rigidbody candyRB;
     Transform childGameObject;
@@ -24,7 +25,7 @@ public class MoveForwardObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(globalSpeed);
     }
 
     private void FixedUpdate()
@@ -82,4 +83,15 @@ public class MoveForwardObj : MonoBehaviour
         }
         
     }
+
+    public static void ReiniciarVariables()
+    {
+        // Reiniciar las variables estáticas aquí
+        speed = 50f;
+        speedIncrease = 0.05f;
+        globalSpeed = 0f;
+        distanceDestroyRaod = -1791;
+        distanceDestroyAssets = -10;
+    }
+
 }

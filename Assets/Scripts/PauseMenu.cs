@@ -9,6 +9,11 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     private bool pauseGame = false;
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
