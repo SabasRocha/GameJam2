@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Timeline/Cinematica Inicial.unity
+    guid: 1c8df3a1b47cc304aaa717dd43a1341a
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2f3ec96f1e6cc424cb0d2c8754dccab0
+  - enabled: 1
+    path: "Assets/Scenes/Dise\xF1o de Nivel_2.unity"
+    guid: 92bf3c3141f95c541922d0c96f93997c
   m_configObjects: {}
