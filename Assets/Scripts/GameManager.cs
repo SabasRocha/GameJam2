@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float spawnRangeX = 3.0f; // Rango en X para la aparición
     public GameObject nino, adolescente, adulto, fantasma;
     public ParticleSystem explosionParticle;
+    public AudioClip levelClip, transformClip;
 
     private void Awake()
     {
@@ -21,7 +23,9 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-      //  InvokeRepeating("SpawnDulce", 0, spawnInterval);
+        
+            AudioManager.Instance.PlayMusic(levelClip, true);
+        
     }
 
     void Update()
@@ -47,18 +51,21 @@ public class GameManager : MonoBehaviour
         switch (Personaje)
         {
             case "adolecente":
+                AudioManager.Instance.PlaySFX(transformClip);
                 adolescente.transform.position = personajeActual.transform.position;
                 Instantiate(explosionParticle, personajeActual.transform.position, explosionParticle.transform.rotation);
                 adolescente.SetActive(true);
                 adolescente.GetComponent<PlayerMovement>().ActCarril(nino.GetComponent<PlayerMovement>().carrilActual);
                 break;
             case "adulto":
+                AudioManager.Instance.PlaySFX(transformClip);
                 adulto.transform.position = personajeActual.transform.position;
                 Instantiate(explosionParticle, personajeActual.transform.position, explosionParticle.transform.rotation);
                 adulto.GetComponent<PlayerMovement>().ActCarril(adolescente.GetComponent<PlayerMovement>().carrilActual);
                 adulto.SetActive(true);
                 break;
             case "muerto":
+                AudioManager.Instance.PlaySFX(transformClip);
                 fantasma.transform.position = personajeActual.transform.position;
                 Instantiate(explosionParticle, personajeActual.transform.position, explosionParticle.transform.rotation);
                 fantasma.GetComponent<PlayerMovement>().ActCarril(adulto.GetComponent<PlayerMovement>().carrilActual);

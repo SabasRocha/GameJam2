@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,11 +24,13 @@ public class PlayerMovement : MonoBehaviour
     public GameObject btn_Pause;
     static bool centinela = false;
     public bool centinela2 = false;
+    public AudioClip candyClip, loseClip, levelClip;
 
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();    
     }
@@ -36,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(centinela == false)
         {
+            AudioManager.Instance.PlayMusic(levelClip, true);
             carrilActual = 2;
             centinela = true;
         }
@@ -52,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UnityEngine.Debug.Log(carrilActual);
+       
         if (Input.GetButtonDown("Izquierda") && carrilActual >= 2)
             {
                 carrilActual--;
@@ -136,19 +140,21 @@ public class PlayerMovement : MonoBehaviour
             if (other.gameObject.CompareTag("Obstacles"))
             {
                 Time.timeScale = 0;
+                AudioManager.Instance.PlayMusic(loseClip, false);
                 panelGameOver.SetActive(true);
                 btn_Pause.SetActive(false);
                 gameOver = true;
             }
             else if (other.gameObject.CompareTag("Candy"))
             {
+                AudioManager.Instance.PlaySFX(candyClip);
                 Destroy(other.gameObject);
             }
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Road"))
+        if (centinela2 == true && collision.gameObject.CompareTag("Road"))
         {
             tocaSuelo = true;
             animator.SetBool("TocaSuelo", tocaSuelo);

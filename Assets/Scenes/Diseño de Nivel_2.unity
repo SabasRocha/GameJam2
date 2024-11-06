@@ -469,6 +469,9 @@ MonoBehaviour:
   panelGameOver: {fileID: 0}
   btn_Pause: {fileID: 0}
   centinela2: 0
+  candyClip: {fileID: 0}
+  loseClip: {fileID: 0}
+  levelClip: {fileID: 0}
 --- !u!1 &182462779
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,20 +620,30 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 498253721416304272, guid: f6ab88624626d1249bd73bcb4a1c7d59, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 269632542}
-    - targetCorrespondingSourceObject: {fileID: 498253721416304272, guid: f6ab88624626d1249bd73bcb4a1c7d59, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 269632543}
     - targetCorrespondingSourceObject: {fileID: 498253721416304272, guid: f6ab88624626d1249bd73bcb4a1c7d59, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 269632548}
+      addedObject: {fileID: 269632549}
   m_SourcePrefab: {fileID: 100100000, guid: f6ab88624626d1249bd73bcb4a1c7d59, type: 3}
 --- !u!1 &269632541 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 498253721416304272, guid: f6ab88624626d1249bd73bcb4a1c7d59, type: 3}
   m_PrefabInstance: {fileID: 269632540}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &269632542
+--- !u!114 &269632543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269632541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56891b5861f165348ab062dab16efd60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  road: {fileID: 6547004383794597099, guid: cc5f6a7263633234f820612fb2e6b933, type: 3}
+--- !u!114 &269632549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -645,7 +658,7 @@ MonoBehaviour:
   posCarrilIzq: {fileID: 623778004}
   posCarrilCen: {fileID: 199466060}
   posCarrilDer: {fileID: 1569392894}
-  carrilActual: 0
+  carrilActual: 2
   tocaSuelo: 0
   jumpForce: 25
   bajar: 30
@@ -653,35 +666,9 @@ MonoBehaviour:
   panelGameOver: {fileID: 1543828569}
   btn_Pause: {fileID: 1121003167}
   centinela2: 0
---- !u!114 &269632543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269632541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56891b5861f165348ab062dab16efd60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  road: {fileID: 6547004383794597099, guid: cc5f6a7263633234f820612fb2e6b933, type: 3}
---- !u!114 &269632548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269632541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d26ba30050aee2428b7b481ba1e2260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dulcesF1: 0
-  dulcesF2: 0
-  dulcesF3: 0
-  puntajeActual: 0
+  candyClip: {fileID: 8300000, guid: 18135728caf7e90438a689bb2856b53a, type: 3}
+  loseClip: {fileID: 8300000, guid: 23c231f7d139a8548a1e564dedc22ec0, type: 3}
+  levelClip: {fileID: 8300000, guid: 4e098446520ecea45b77ff85be5ae6d1, type: 3}
 --- !u!1001 &287448412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4925,6 +4912,9 @@ MonoBehaviour:
   panelGameOver: {fileID: 1543828569}
   btn_Pause: {fileID: 1121003167}
   centinela2: 0
+  candyClip: {fileID: 8300000, guid: 18135728caf7e90438a689bb2856b53a, type: 3}
+  loseClip: {fileID: 8300000, guid: 23c231f7d139a8548a1e564dedc22ec0, type: 3}
+  levelClip: {fileID: 8300000, guid: 4e098446520ecea45b77ff85be5ae6d1, type: 3}
 --- !u!4 &1885312668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8769545137862481312, guid: cc5f6a7263633234f820612fb2e6b933, type: 3}
@@ -5277,9 +5267,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2543750256239184939, guid: ac9e8d36581232e43b14753b55aa62fa, type: 3}
+      propertyPath: loseClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 23c231f7d139a8548a1e564dedc22ec0, type: 3}
+    - target: {fileID: 2543750256239184939, guid: ac9e8d36581232e43b14753b55aa62fa, type: 3}
       propertyPath: btn_Pause
       value: 
       objectReference: {fileID: 1121003167}
+    - target: {fileID: 2543750256239184939, guid: ac9e8d36581232e43b14753b55aa62fa, type: 3}
+      propertyPath: candyClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 18135728caf7e90438a689bb2856b53a, type: 3}
+    - target: {fileID: 2543750256239184939, guid: ac9e8d36581232e43b14753b55aa62fa, type: 3}
+      propertyPath: levelClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e098446520ecea45b77ff85be5ae6d1, type: 3}
     - target: {fileID: 2543750256239184939, guid: ac9e8d36581232e43b14753b55aa62fa, type: 3}
       propertyPath: panelPausa
       value: 
@@ -5311,13 +5313,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4699603657872960098, guid: ac9e8d36581232e43b14753b55aa62fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998441948}
   m_SourcePrefab: {fileID: 100100000, guid: ac9e8d36581232e43b14753b55aa62fa, type: 3}
 --- !u!1 &1998441947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4699603657872960098, guid: ac9e8d36581232e43b14753b55aa62fa, type: 3}
   m_PrefabInstance: {fileID: 1989300298}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1998441948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998441947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2260ced47c3604b9b865e6bf5c23f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posCarrilIzq: {fileID: 623778004}
+  posCarrilCen: {fileID: 199466060}
+  posCarrilDer: {fileID: 1569392894}
+  carrilActual: 2
+  tocaSuelo: 0
+  jumpForce: 25
+  bajar: 30
+  gameOver: 0
+  panelGameOver: {fileID: 1543828569}
+  btn_Pause: {fileID: 1121003167}
+  centinela2: 0
+  candyClip: {fileID: 8300000, guid: 18135728caf7e90438a689bb2856b53a, type: 3}
+  loseClip: {fileID: 8300000, guid: 23c231f7d139a8548a1e564dedc22ec0, type: 3}
+  levelClip: {fileID: 8300000, guid: 4e098446520ecea45b77ff85be5ae6d1, type: 3}
 --- !u!1 &2090179878
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,6 +5386,8 @@ MonoBehaviour:
   adulto: {fileID: 2102991712}
   fantasma: {fileID: 269632541}
   explosionParticle: {fileID: 8091811445521787161, guid: 5dd8ec0da15a616469d08111c458870a, type: 3}
+  levelClip: {fileID: 8300000, guid: 4e098446520ecea45b77ff85be5ae6d1, type: 3}
+  transformClip: {fileID: 8300000, guid: 7d0374d399dcdd149ace658492ef37ad, type: 3}
 --- !u!4 &2090179880
 Transform:
   m_ObjectHideFlags: 0
@@ -6078,13 +6111,13 @@ PrefabInstance:
       addedObject: {fileID: 2102991715}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f8642a5a39be1be4f88760ab2e231b78, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2102991714}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f8642a5a39be1be4f88760ab2e231b78, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2102991713}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f8642a5a39be1be4f88760ab2e231b78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2102991718}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f8642a5a39be1be4f88760ab2e231b78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2102991720}
   m_SourcePrefab: {fileID: 100100000, guid: f8642a5a39be1be4f88760ab2e231b78, type: 3}
 --- !u!1 &2102991712 stripped
 GameObject:
@@ -6104,29 +6137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   road: {fileID: 6547004383794597099, guid: cc5f6a7263633234f820612fb2e6b933, type: 3}
---- !u!114 &2102991714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102991712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae2260ced47c3604b9b865e6bf5c23f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posCarrilIzq: {fileID: 623778004}
-  posCarrilCen: {fileID: 199466060}
-  posCarrilDer: {fileID: 1569392894}
-  carrilActual: 0
-  tocaSuelo: 0
-  jumpForce: 25
-  bajar: 30
-  gameOver: 0
-  panelGameOver: {fileID: 1543828569}
-  btn_Pause: {fileID: 1121003167}
-  centinela2: 0
 --- !u!54 &2102991715
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6198,6 +6208,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2102991720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102991712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2260ced47c3604b9b865e6bf5c23f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posCarrilIzq: {fileID: 623778004}
+  posCarrilCen: {fileID: 199466060}
+  posCarrilDer: {fileID: 1569392894}
+  carrilActual: 2
+  tocaSuelo: 0
+  jumpForce: 25
+  bajar: 30
+  gameOver: 0
+  panelGameOver: {fileID: 1543828569}
+  btn_Pause: {fileID: 1121003167}
+  centinela2: 0
+  candyClip: {fileID: 8300000, guid: 18135728caf7e90438a689bb2856b53a, type: 3}
+  loseClip: {fileID: 8300000, guid: 23c231f7d139a8548a1e564dedc22ec0, type: 3}
+  levelClip: {fileID: 8300000, guid: 4e098446520ecea45b77ff85be5ae6d1, type: 3}
 --- !u!1001 &7778677167444132259
 PrefabInstance:
   m_ObjectHideFlags: 0
