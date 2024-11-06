@@ -29,9 +29,16 @@ public class MoveForwardObj : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveAndRotateElements();
-        DestroyElements();
-        speed +=speedIncrease  * Time.deltaTime;
+       
+       MoveAndRotateElements();
+       DestroyElements();
+       GlobalVelocity();
+       
+    }
+
+    public void GlobalVelocity()
+    {
+        speed += speedIncrease * Time.deltaTime;
         globalSpeed = Mathf.Min(3, (speed * Time.deltaTime));
     }
 
@@ -39,11 +46,11 @@ public class MoveForwardObj : MonoBehaviour
     {
         transform.Translate(0, 0, -(globalSpeed));
 
-        if (gameObject.CompareTag("Candy"))
+        if (gameObject.CompareTag("Candy") && candyRB != null)
         {
             candyRB.AddTorque(0, 15, 0, ForceMode.Force);
         }
-        transform.Translate(0, 0, -(globalSpeed));
+        
     }
 
     void DestroyElements()
