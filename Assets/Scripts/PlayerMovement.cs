@@ -21,11 +21,14 @@ public class PlayerMovement : MonoBehaviour
     public bool gameOver;
     public GameObject panelGameOver;
     public GameObject panelPause;
+    public AudioClip candyClip, loseClip, levelClip;
+
     // Start is called before the first frame update
     void Start()
     {
         carrilActual = 2;
         rb = GetComponent<Rigidbody>();
+        AudioManager.Instance.PlayMusic(levelClip, true);
     }
 
     // Update is called once per frame
@@ -112,10 +115,12 @@ public class PlayerMovement : MonoBehaviour
             gameOver = true;
             panelGameOver.SetActive(true);
             panelPause.SetActive(false);
+            AudioManager.Instance.PlayMusic(loseClip, false);
         }
         else if (other.gameObject.CompareTag("Candy"))
         {
             Destroy(other.gameObject);
+            AudioManager.Instance.PlaySFX(candyClip);
         }
     }//movimiento de Jhonatan
 }
