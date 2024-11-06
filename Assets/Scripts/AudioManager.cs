@@ -7,19 +7,21 @@ public class AudioManager : MonoBehaviour
 {
 
     public static AudioManager Instance;
-    [SerializeField] AudioSource musicSource, effectsSource;
+    // Cambiar los campos a public
+    public AudioSource musicSource;
+    public AudioSource effectsSource;
     public AudioMixer master;
+
     private void Awake()
     {
-
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(this.gameObject); // Esto mantiene la instancia persistente
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject); // Destruye el objeto duplicado
         }
     }
     public void PlaySFX(AudioClip clip)
@@ -32,17 +34,5 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = music;
         musicSource.Play();
         musicSource.loop = loop;
-    }
-
-    public void MuteMusic()
-    {
-        musicSource.volume = 0;
-        effectsSource.volume = 0;
-    }
-
-    public void VolumeMusic()
-    {
-        musicSource.volume = 0.4f;
-        effectsSource.volume = 0.8f;
     }
 }
