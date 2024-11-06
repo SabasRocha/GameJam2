@@ -107,7 +107,7 @@ public class SpawnObjManager : MonoBehaviour
             }
             else
             {
-                Time.timeScale = 0f;
+                
             }
             yield return new WaitForSeconds(repeatDelay);
         }
