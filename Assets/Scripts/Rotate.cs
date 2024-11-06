@@ -14,6 +14,6 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        candyRB.AddTorque(0, 2, 0, ForceMode.Force);
+        candyRB.AddTorque(0, 0.2f, 0, ForceMode.Force);
     }
 }
