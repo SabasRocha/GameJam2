@@ -115,6 +115,7 @@ public class GameUIManager : MonoBehaviour
                 phaseMinValue = 0;
                 break;
             case 2:
+                GameManager.Instance.CambiarPersonaje();
                 phaseMaxTime = 300;
                 phaseMinValue = 101;
                 break;

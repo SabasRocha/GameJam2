@@ -1111,20 +1111,18 @@ GameObject:
   m_Component:
   - component: {fileID: 1432962192203089523}
   - component: {fileID: 660396169573052012}
-  - component: {fileID: 4482269563785696960}
-  - component: {fileID: 5231426520581380229}
   - component: {fileID: 2028607712330420581}
   - component: {fileID: 7212642284765762631}
-  - component: {fileID: 4544176460981542740}
-  - component: {fileID: 7989221300024132865}
   - component: {fileID: 3279038816072323893}
+  - component: {fileID: 2543750256239184939}
+  - component: {fileID: 5925210862887032441}
   m_Layer: 0
   m_Name: Adolescente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1432962192203089523
 Transform:
   m_ObjectHideFlags: 0
@@ -1163,43 +1161,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4482269563785696960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4699603657872960098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d26ba30050aee2428b7b481ba1e2260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dulcesF1: 0
-  dulcesF2: 0
-  dulcesF3: 0
-  puntajeActual: 0
---- !u!114 &5231426520581380229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4699603657872960098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed89760503701004fbe6376545178e18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posCarrilIzq: {fileID: 0}
-  posCarrilCen: {fileID: 0}
-  posCarrilDer: {fileID: 0}
-  carrilActual: 0
-  tocaSuelo: 0
-  jumpForce: 30
-  bajar: 30
-  gameOver: 0
-  animator: {fileID: 660396169573052012}
 --- !u!136 &2028607712330420581
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1250,32 +1211,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &4544176460981542740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4699603657872960098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56891b5861f165348ab062dab16efd60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  road: {fileID: 6547004383794597099, guid: cc5f6a7263633234f820612fb2e6b933, type: 3}
---- !u!114 &7989221300024132865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4699603657872960098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8cc71fa9272bc9409f9f57c37a3ef02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOver: 0
 --- !u!114 &3279038816072323893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1292,6 +1227,39 @@ MonoBehaviour:
   dulcesF2: 0
   dulcesF3: 0
   puntajeActual: 0
+--- !u!114 &2543750256239184939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699603657872960098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2260ced47c3604b9b865e6bf5c23f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posCarrilIzq: {fileID: 0}
+  posCarrilCen: {fileID: 0}
+  posCarrilDer: {fileID: 0}
+  carrilActual: 0
+  tocaSuelo: 0
+  jumpForce: 30
+  bajar: 30
+  gameOver: 0
+--- !u!114 &5925210862887032441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699603657872960098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56891b5861f165348ab062dab16efd60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  road: {fileID: 6547004383794597099, guid: cc5f6a7263633234f820612fb2e6b933, type: 3}
 --- !u!1 &4758002410481285384
 GameObject:
   m_ObjectHideFlags: 0

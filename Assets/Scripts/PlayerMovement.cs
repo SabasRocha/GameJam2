@@ -7,9 +7,9 @@ using DG.Tweening;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Poscicion de Carriles")]
-    [SerializeField] private Transform posCarrilIzq;
-    [SerializeField] private Transform posCarrilCen;
-    [SerializeField] private Transform posCarrilDer;
+    public Transform posCarrilIzq;
+    public Transform posCarrilCen;
+    public Transform posCarrilDer;
     [Space]
     [Header("Variables de Salto")]
     public int carrilActual;
@@ -20,12 +20,13 @@ public class PlayerMovement : MonoBehaviour
     public float bajar;
     public bool gameOver;
 
-    public Animator animator;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         carrilActual = 2;
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();    
     }
 
     // Update is called once per frame
