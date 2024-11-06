@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
     public void ActCarril(int carrilNuevo)
     {
         carrilActual = carrilNuevo;
-        UnityEngine.Debug.Log("Carril Personaje Nuevo: " + carrilActual);
         Update();
     }
 
