@@ -10,6 +10,9 @@ public class SpawnObjManager : MonoBehaviour
     public  GameObject spawnPos1;
     public GameObject  spawnPos2;
     public GameObject  spawnPos3;
+    public GameObject spawnPos1_1;
+    public GameObject spawnPos2_2;
+    public GameObject spawnPos3_3;
     private float startDelay = 1, repeatDelay = 3.5f, delayDecreaseRate = 0.05f, candysOffSet = 2.1f;
     int speed, prefabIndex1, prefabIndex2, prefabIndex3, prefabCandyIndex1, prefabChoiceIndex;
     private PlayerMovement playerMovement;
@@ -19,6 +22,13 @@ public class SpawnObjManager : MonoBehaviour
 
     void Start()
     {
+        prefabIndex1 = Random.Range(0, obstaclePrefabs.Length);
+        prefabIndex2 = Random.Range(0, obstaclePrefabs.Length);
+        prefabCandyIndex1 = Random.Range(0, candysPrefabs.Length);
+        Instantiate(obstaclePrefabs[prefabIndex1], spawnPos1_1.transform.position, Quaternion.identity);
+        Instantiate(obstaclePrefabs[prefabIndex2], spawnPos2_2.transform.position, Quaternion.identity);
+        Instantiate(candysPrefabs[prefabCandyIndex1], new Vector3(spawnPos3_3.transform.position.x, spawnPos3_3.transform.position.y + candysOffSet, spawnPos3_3.transform.position.z), Quaternion.identity);
+
         playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
         moveForwardObj = GameObject.FindWithTag("Road").GetComponent<MoveForwardObj>();
         StartCoroutine(SpawnObstacules());
