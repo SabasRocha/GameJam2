@@ -18,7 +18,6 @@ public class SpawnObjManager : MonoBehaviour
     private PlayerMovement playerMovement;
     private MoveForwardObj moveForwardObj;
     bool centinela = false;
-    
 
     void Start()
     {
