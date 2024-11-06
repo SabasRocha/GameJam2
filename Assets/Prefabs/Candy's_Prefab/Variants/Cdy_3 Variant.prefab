@@ -104,7 +104,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1958473044330845270, guid: c9ceb5ee6d39844408dde822be961e71, type: 3}
       propertyPath: puntajeDulce
-      value: 15
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 410769901733592942, guid: c9ceb5ee6d39844408dde822be961e71, type: 3}
       propertyPath: m_Name
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e2191c2828b5045a87db220d8c196f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntajeDulce: 15
+  puntajeDulce: 7
   explosionParticle: {fileID: 7321626297651844771}
 --- !u!4 &4750512850573411062 stripped
 Transform:
