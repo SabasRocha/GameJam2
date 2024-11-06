@@ -11,13 +11,13 @@ public class CinematicEnd : MonoBehaviour
         // Obtiene el componente PlayableDirector
         director = GetComponent<PlayableDirector>();
 
-        // Añade un listener para cuando termina el Timeline
+        // Aï¿½ade un listener para cuando termina el Timeline
         director.stopped += OnCinematicEnd;
     }
 
     void OnCinematicEnd(PlayableDirector pd)
     {
-        // Cambia a la escena del menú principal cuando termine la cinemática
+        // Cambia a la escena del menï¿½ principal cuando termine la cinemï¿½tica
         if (pd == director)
         {
             SceneManager.LoadScene("Menu");
@@ -31,6 +31,18 @@ public class CinematicEnd : MonoBehaviour
         {
             director.stopped -= OnCinematicEnd;
         }
+    }
+
+    public void Skip()
+    {
+
+        if (director != null)
+        {
+            director.Stop();
+        }
+
+
+        SceneManager.LoadScene("Menu");
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,20 +20,43 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float bajar;
     public bool gameOver;
+    public GameObject panelGameOver;
+    public GameObject btn_Pause;
+    static bool centinela = false;
+    public bool centinela2 = false;
+    public AudioClip candyClip, loseClip, levelClip;
 
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        carrilActual = 2;
+        
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();    
+    }
+
+    private void Awake()
+    {
+        if(centinela == false)
+        {
+            AudioManager.Instance.PlayMusic(levelClip, true);
+            carrilActual = 2;
+            centinela = true;
+        }
+        
+    }
+
+    public void ActCarril(int carrilNuevo)
+    {
+        carrilActual = carrilNuevo;
+        UnityEngine.Debug.Log("Carril Personaje Nuevo: " + carrilActual);
+        Update();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       
         if (Input.GetButtonDown("Izquierda") && carrilActual >= 2)
             {
                 carrilActual--;
@@ -88,13 +112,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Road"))
+        if (centinela2 == true && collision.gameObject.CompareTag("Road"))
         {
            
-                tocaSuelo = true;
-                animator.SetBool("TocaSuelo", tocaSuelo);
-            
-            
+            tocaSuelo = true;
+            animator.SetBool("TocaSuelo", tocaSuelo);
+                      
         }
     }
 
@@ -116,20 +139,31 @@ public class PlayerMovement : MonoBehaviour
     {
             if (other.gameObject.CompareTag("Obstacles"))
             {
+                Time.timeScale = 0;
+                AudioManager.Instance.PlayMusic(loseClip, false);
+                panelGameOver.SetActive(true);
+                btn_Pause.SetActive(false);
                 gameOver = true;
             }
             else if (other.gameObject.CompareTag("Candy"))
             {
+                AudioManager.Instance.PlaySFX(candyClip);
                 Destroy(other.gameObject);
             }
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Road"))
+        if (centinela2 == true && collision.gameObject.CompareTag("Road"))
         {
             tocaSuelo = true;
             animator.SetBool("TocaSuelo", tocaSuelo);
         }
+    }
+
+    private void OnEnable()
+    {
+        animator = GetComponent<Animator>();
+        centinela2 = true;
     }
 }

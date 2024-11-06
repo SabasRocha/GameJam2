@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 public class MoveForwardObj : MonoBehaviour
 {
-    public static float movementZ, speed = 80f, speedIncrease = 0.05f, globalSpeed, distanceDestroyRaod = -1791, distanceDestroyAssets = -10;
+    public static float movementZ, speed = 50f, speedIncrease = 0.05f, globalSpeed = 0f, distanceDestroyRaod = -1791, distanceDestroyAssets = -10;
     private bool Destruido = false;
+    public static PlayerMovement playerMovement;
     private Rigidbody candyRB;
     Transform childGameObject;
     public float globalSpeedPub;
@@ -15,6 +17,7 @@ public class MoveForwardObj : MonoBehaviour
     void Start()
     {
         transform.position = transform.position;
+        playerMovement = GetComponent<PlayerMovement>();    
         if(gameObject.CompareTag("Candy") && Destruido == false)
         {
             candyRB = GetComponentInChildren<Rigidbody>();
@@ -78,8 +81,20 @@ public class MoveForwardObj : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-           // Destroy(gameObject);
+            Destroy(gameObject);
+           
         }
         
     }
+
+    public static void ReiniciarVariables()
+    {
+        // Reiniciar las variables estáticas aquí
+        speed = 50f;
+        speedIncrease = 0.05f;
+        globalSpeed = 0f;
+        distanceDestroyRaod = -1791;
+        distanceDestroyAssets = -10;
+    }
+
 }

@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e2191c2828b5045a87db220d8c196f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntajeDulce: 10
+  puntajeDulce: 100
   explosionParticle: {fileID: 562209601526324335}
 --- !u!1001 &8612779163537798518
 PrefabInstance:
