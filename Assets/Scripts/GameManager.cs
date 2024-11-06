@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject dulcePrefab; // Asigna tu prefab de dulce aquí
     public float spawnInterval = 2f; // Intervalo de generación
     public float spawnRangeX = 3.0f; // Rango en X para la aparición
-    public GameObject nino, adolescente, adulto, anciano, fantasma;
+    public GameObject nino, adolescente, adulto, fantasma;
 
     private void Awake()
     {
@@ -46,16 +46,13 @@ public class GameManager : MonoBehaviour
             case "adulto":
                 adulto.SetActive(true);
                 break;
-            case "viejo":
-                anciano.SetActive(true);
-                break;
             case "muerto":
                 fantasma.SetActive(true);   
                 break;
         }
+        GameObject.FindAnyObjectByType<SpawnObjManager>().SetPlayer();
 
-
-        personajeActual.SetActive(false);
+      
 
     }
 }

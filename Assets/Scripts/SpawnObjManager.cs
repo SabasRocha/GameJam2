@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,13 +19,17 @@ public class SpawnObjManager : MonoBehaviour
 
     void Start()
     {
-        playerControllertest = GameObject.FindAnyObjectByType<PlayerMovement>();
-        moveForwardObj = GameObject.FindWithTag("Road").GetComponent<MoveForwardObj>();
+        SetPlayer();
+         moveForwardObj = GameObject.FindWithTag("Road").GetComponent<MoveForwardObj>();
         //InvokeRepeating("SpawnObstacules", startDelay, repeatDelay);
         StartCoroutine(SpawnObstacules());
 
+        
     }
-
+     public void SetPlayer()
+    {
+        playerControllertest = GameObject.FindAnyObjectByType<PlayerMovement>();
+    }
     // Update is called once per frame
     void Update()
     {

@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puntajeDulce: 2
+  explosionParticle: {fileID: 8091811445521787161, guid: d5eb4a48259682b4f860dd378bcb9319, type: 3}
 --- !u!135 &1038160518031338476
 SphereCollider:
   m_ObjectHideFlags: 0
