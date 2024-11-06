@@ -90,8 +90,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Road"))
         {
-            tocaSuelo = true;
-            animator.SetBool("TocaSuelo", tocaSuelo);
+           
+                tocaSuelo = true;
+                animator.SetBool("TocaSuelo", tocaSuelo);
+            
+            
         }
     }
 

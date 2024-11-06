@@ -26,17 +26,17 @@ public class PlayerTranformation : MonoBehaviour
             //puntajeActual += other.GetComponent<Candy>().puntajeDulce;
             if (puntajeActual == dulcesF1) 
             {
-                GameObject.FindAnyObjectByType<GameManager>().CambiarPersonaje();
+              
             }
             if (puntajeActual == dulcesF2)
             {
                 //Aumentar tamano
-                transform.localScale = new Vector3(3, 3, 3);
+                
             }
             if (puntajeActual == dulcesF3)
             {
                 //Aumentar tamano
-                transform.localScale = new Vector3(4, 4, 4);
+
             }
         }
     }

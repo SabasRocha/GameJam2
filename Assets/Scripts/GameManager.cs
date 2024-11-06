@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject dulcePrefab; // Asigna tu prefab de dulce aquí
     public float spawnInterval = 2f; // Intervalo de generación
     public float spawnRangeX = 3.0f; // Rango en X para la aparición
-    public GameObject adolescente, adulto, anciano, fantasma;
+    public GameObject nino, adolescente, adulto, anciano, fantasma;
 
     private void Awake()
     {
@@ -30,16 +31,31 @@ public class GameManager : MonoBehaviour
 
         Instantiate(dulcePrefab, spawnPosition, Quaternion.identity);
     }
-    public void CambiarPersonaje()
+    public void CambiarPersonaje(string Personaje)
     {
         GameObject personajeActual = GameObject.FindAnyObjectByType<PlayerMovement>().gameObject;
         PlayerMovement playerMovement = GameObject.FindAnyObjectByType<PlayerMovement>();
         Vector3 position = personajeActual.transform.position;
         personajeActual.SetActive(false);
-        GameObject personajeCreado = Instantiate(adolescente, position, Quaternion.identity);
-        personajeCreado.GetComponent<PlayerMovement>().posCarrilIzq = playerMovement.posCarrilIzq; 
-        personajeCreado.GetComponent<PlayerMovement>().posCarrilCen = playerMovement.posCarrilCen; 
-        personajeCreado.GetComponent<PlayerMovement>().posCarrilDer = playerMovement.posCarrilDer; 
+
+        switch (Personaje)
+        {
+            case "adolecente":
+                adolescente.SetActive(true);
+                break;
+            case "adulto":
+                adulto.SetActive(true);
+                break;
+            case "viejo":
+                anciano.SetActive(true);
+                break;
+            case "muerto":
+                fantasma.SetActive(true);   
+                break;
+        }
+
+
+        personajeActual.SetActive(false);
 
     }
 }
