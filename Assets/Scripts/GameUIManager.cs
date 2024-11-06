@@ -84,12 +84,15 @@ public class GameUIManager : MonoBehaviour
                 break;
             case 1:
                 messageText.text = "Very good, you managed to grow up, you are a teenager";
+                GameManager.Instance.CambiarPersonaje("adolecente");
                 break;
             case 2:
                 messageText.text = "You are progressing, you are an adult";
+                GameManager.Instance.CambiarPersonaje("adulto");
                 break;
             case 3:
                 messageText.text = "Fantastic, you are a very skilled older adult.";
+                GameManager.Instance.CambiarPersonaje("muerto");
                 break;
             default:
                 break;
@@ -115,6 +118,7 @@ public class GameUIManager : MonoBehaviour
                 phaseMinValue = 0;
                 break;
             case 2:
+
                 phaseMaxTime = 300;
                 phaseMinValue = 101;
                 break;

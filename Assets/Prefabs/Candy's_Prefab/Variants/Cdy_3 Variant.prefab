@@ -102,6 +102,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1958473044330845270, guid: c9ceb5ee6d39844408dde822be961e71, type: 3}
+      propertyPath: puntajeDulce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 410769901733592942, guid: c9ceb5ee6d39844408dde822be961e71, type: 3}
       propertyPath: m_Name
       value: Cdy_3 Variant
