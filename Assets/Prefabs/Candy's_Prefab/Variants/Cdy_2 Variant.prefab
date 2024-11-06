@@ -102,6 +102,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5463461994718609190, guid: a2241f7fba20087439b4d916a04a8a7b, type: 3}
+      propertyPath: puntajeDulce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5675389668931715785, guid: a2241f7fba20087439b4d916a04a8a7b, type: 3}
       propertyPath: m_Name
       value: Cdy_2 Variant
@@ -186,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e2191c2828b5045a87db220d8c196f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntajeDulce: 100
+  puntajeDulce: 10
   explosionParticle: {fileID: 562209601526324335}
 --- !u!1001 &8612779163537798518
 PrefabInstance:

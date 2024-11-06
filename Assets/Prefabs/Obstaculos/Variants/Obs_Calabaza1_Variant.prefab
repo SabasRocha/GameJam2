@@ -147,18 +147,50 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7750111106220331433, guid: 7ee999ea6e9ae7b4699da0b95779a4d3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750111106220331433, guid: 7ee999ea6e9ae7b4699da0b95779a4d3, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6949311896079820948, guid: 7ee999ea6e9ae7b4699da0b95779a4d3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4323107667460118075, guid: 7ee999ea6e9ae7b4699da0b95779a4d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7215759235087582887}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1834070790461867762, guid: 7ee999ea6e9ae7b4699da0b95779a4d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1054798247748281844}
   m_SourcePrefab: {fileID: 100100000, guid: 7ee999ea6e9ae7b4699da0b95779a4d3, type: 3}
+--- !u!1 &5268724745589427249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1834070790461867762, guid: 7ee999ea6e9ae7b4699da0b95779a4d3, type: 3}
+  m_PrefabInstance: {fileID: 5795473663705565891}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1054798247748281844
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5268724745589427249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.24, y: 5.25, z: 8.68}
+  m_Center: {x: 0, y: 2.49, z: 0}
 --- !u!4 &7751657115851627768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4323107667460118075, guid: 7ee999ea6e9ae7b4699da0b95779a4d3, type: 3}

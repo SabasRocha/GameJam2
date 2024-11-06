@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         
-            AudioManager.Instance.PlayMusic(levelClip, true);
+       AudioManager.Instance.PlayMusic(levelClip, true);
         
     }
 
